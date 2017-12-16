@@ -23,8 +23,8 @@
     <legend> 如何交流、反馈、参与贡献？</legend>
 </fieldset>
 <blockquote class="layui-elem-quote">
-    1.项目主页 <a class="a-link" target="_blank" href="http://admin.cymall.xin">http://admin.cymall.xin。</a><br>
-    2.码云地址 <a class="a-link" target="_blank" href="https://gitee.com/leiyuxi/cy-security1.1">https://gitee.com/leiyuxi/cy-security1.1</a><br>
+    1.项目主页 <a class="a-link" target="_blank" href="http://admin.cymall.xin">http://admin.cymall.xin</a><br>
+    2.码云地址 <a class="a-link" target="_blank" href="https://gitee.com/leiyuxi/cy-security">https://gitee.com/leiyuxi/cy-security</a><br>
     3.qq群 275846351<br>
 </blockquote>
 
