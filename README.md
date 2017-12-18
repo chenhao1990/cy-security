@@ -50,7 +50,7 @@
  **如何交流、反馈、参与贡献？** 
 
 - 项目主页 http://admin.cymall.xin
-- 码云地址 https://gitee.com/leiyuxi/cy-security1.1
+- 码云地址 https://gitee.com/leiyuxi/cy-security
 - qq群    275846351
 
 
