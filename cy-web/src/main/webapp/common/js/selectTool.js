@@ -190,16 +190,10 @@
                 }
             }
             //渲染下拉框
-            layui.use(['form'], function () {
+            layui.use('form', function () {
                 var form = layui.form();
-                //监听提交
-                form.on('select()', function (data) {
-                    form.render();
-                    return false;
-                });
-
+                form.render('select');
             });
-
 
         }
     }

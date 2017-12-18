@@ -50,7 +50,6 @@
                 type: 'post',
                 dataType: "json",
                 success: function (R) {
-debugger
                     if (R.code == 0) {
                         data = R;
                     } else {
