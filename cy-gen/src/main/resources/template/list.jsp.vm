@@ -48,7 +48,7 @@
             <i class="fa fa-trash-o">&nbsp;</i>删除
         </button>
         </shiro:hasPermission>
-    </button>
+
 </div>
 <div class="layui-form ">
     <table class="layui-table" id="${classname}Table" cyType="pageGrid"
