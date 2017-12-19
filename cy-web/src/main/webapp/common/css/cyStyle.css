@@ -47,6 +47,9 @@ img{
 .ft-26{font-size: 26px}
 .ft-28{font-size: 28px}
 .ft-30{font-size: 30px}
+.center{
+    text-align: center;
+}
 /*字体加粗*/
 .ft-normal{
     font-weight: normal;

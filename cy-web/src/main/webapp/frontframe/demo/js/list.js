@@ -12,7 +12,7 @@ var Render = {
      * @param value      当前对象值
      */
     customState: function (rowdata,renderData,index, value) {
-
+        $(this).find("[class='we']");
         if(value == "启用"){
             return '<span style="color:green">'+value+'</span>';
         }

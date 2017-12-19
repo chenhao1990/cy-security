@@ -153,9 +153,9 @@ layui.define('layer', function(exports){
                         dds.removeClass(HIDE);
 
                         //上下定位识别
-                        if(top + dlHeight > win.height() && top >= dlHeight){
-                            reElem.addClass(CLASS + 'up');
-                        }
+                        // if(top + dlHeight > win.height() && top >= dlHeight){
+                        //     reElem.addClass(CLASS + 'up');
+                        // }
                     }, hideDown = function(choose){
                         reElem.removeClass(CLASS+'ed ' + CLASS+'up');
                         input.blur();

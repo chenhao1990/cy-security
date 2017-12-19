@@ -259,6 +259,14 @@
             }
           ],
           "url": ""
+        },
+        {
+          "children": null,
+          "icon": "fa fa-pencil",
+          "list": null,
+          "name": "模板引擎",
+          "type": 1,
+          "url":  "frontframe/widget/tplTool.jsp"
         }
       ],
       "name": "常用控件",
