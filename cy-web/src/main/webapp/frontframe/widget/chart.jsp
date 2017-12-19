@@ -11,9 +11,13 @@
 
     <meta charset="utf-8">
     <%@ include file="/common/jsp/resource.jsp" %>
-
+    <script>
+        var index=Loading.open(1,false);
+    </script>
     <!-- 引入 ECharts 文件 -->
     <script src="/statics/plugins/echarts/echarts.js"></script>
+
+
 
 </head>
 
@@ -141,6 +145,10 @@
     layui.use('code', function () { //加载code模块
         layui.code({encode: true}); //引用code方法
     });
+
+    $(document).ready(function () {
+        Loading.close(index);
+    })
 
 </script>
 </html>
