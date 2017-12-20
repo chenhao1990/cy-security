@@ -46,6 +46,7 @@
 	        	/statics/**=anon
 				/api/**=anon
 	        	/login.html=anon
+				/index_bak.html=anon
 	        	/sys/login=anon
 	        	/captcha.jpg=anon
 	        	/**=authc
