@@ -27,7 +27,7 @@
 - common           公用文件
 - frontframe       前端框架文件
 - page             页面文件
-- statics          插件
+- statics          其他静态文件
 
 
  **本地部署**
@@ -51,6 +51,7 @@
 
 - 项目主页 http://admin.cymall.xin
 - 码云地址 https://gitee.com/leiyuxi/cy-security
+- 中国开源 https://www.oschina.net/p/cy-security
 - qq群    275846351
 
 
