@@ -1,4 +1,11 @@
 html { overflow-x:hidden; }
+.content iframe{display: none}
+.cy-none{
+    display: none;
+}
+.cy-show{
+    display: block!important;
+}
 .content-header {
 	position: relative;
 	padding: 0 0 3px 8px

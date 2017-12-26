@@ -1,69 +1,62 @@
-<%--
-  Created by chenyi
-  email: qq228112142@qq.com
-  Date : 2017-08-08 17:35:59
---%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
- <script src="/statics/libs/jquery-1.10.2.min.js"></script>
- <!-- 引入 ECharts 文件 -->
- <script src="/statics/plugins/echarts/echarts.js"></script>
+ <%@ include file="/common/jsp/resource.jsp" %>
 </head>
 <body>
-<!-- 为 ECharts 准备一个具备大小（宽高）的 DOM -->
-<div id="main" style="width: 900px;height:600px;"></div>
+<fieldset class="layui-elem-field layui-field-title" style="margin-top: 30px;">
+ <legend> 框架说明</legend>
+</fieldset>
+<blockquote class="layui-elem-quote">
+ 1.基于ssm+shiro安全框架的后台管理框架，权限简单易用可控制到按钮。<br>
+ 2.配置代码生成器，减少70%开发时间，专注业务逻辑。<br>
+ 3.前端声明式组件封装、附带文档编写 ctrl+c ctrl+v 即可使用。封装数据源，可通过url、枚举、字典直接渲染组件。代码量极少且易维护。<br>
+ 4.layui常用代码的二次封装，省略layui部分繁琐的代码！&nbsp;&nbsp;&nbsp;<a class="a-link" target="_blank" href="http://www.layui.com">》》》layui官网入口</a><br>
+</blockquote>
+
+<fieldset class="layui-elem-field layui-field-title" style="margin-top: 30px;">
+ <legend> 如何交流、反馈、参与贡献？</legend>
+</fieldset>
+<blockquote class="layui-elem-quote">
+ 1.项目主页 <a class="a-link" target="_blank" href="http://admin.cymall.xin">http://admin.cymall.xin</a><br>
+ 2.码云地址 <a class="a-link" target="_blank" href="https://gitee.com/leiyuxi/cy-security">https://gitee.com/leiyuxi/cy-security</a><br>
+ 3.qq群 275846351<br>
+</blockquote>
+
+<fieldset class="layui-elem-field layui-field-title" style="margin-top: 30px;">
+ <legend>版本更新记录</legend>
+</fieldset>
+<ul class="layui-timeline">
+ <li class="layui-timeline-item">
+  <i class="layui-icon layui-timeline-axis">&#xe63f;</i>
+  <div class="layui-timeline-content layui-text">
+   <h3 class="layui-timeline-title">2017-12-26</h3>
+   <p class="a-link">增加tab页功能</p>
+   <ul>
+    <li>将单页面转为tab页功能</li>
+    <li>支持多模块菜单</li>
+   </ul>
+  </div>
+ </li>
+ <li class="layui-timeline-item">
+  <i class="layui-icon layui-timeline-axis">&#xe63f;</i>
+  <div class="layui-timeline-content layui-text">
+   <h3 class="layui-timeline-title">2017-12-14</h3>
+   <p class="a-link">首次发布</p>
+   <ul>
+    <li>前端声明式组件封装</li>
+    <li>代码生成器</li>
+   </ul>
+  </div>
+ </li>
+
+ <li class="layui-timeline-item">
+  <i class="layui-icon layui-timeline-axis">&#xe63f;</i>
+  <div class="layui-timeline-content layui-text">
+   <div class="layui-timeline-title">过去</div>
+  </div>
+ </li>
+</ul>
+
 </body>
-<script type="text/javascript">
-
-    // 基于准备好的dom，初始化echarts实例
-    var myChart = echarts.init(document.getElementById('main'));
-
-    // 指定图表的配置项和数据
-
-    var option = {
-        title: {
-            text: '登陆统计'
-        },
-        color: ['#3398DB'],
-        tooltip : {
-            trigger: 'axis',
-            axisPointer : {            // 坐标轴指示器，坐标轴触发有效
-                type : 'shadow'        // 默认为直线，可选为：'line' | 'shadow'
-            }
-        },
-        grid: {
-            left: '3%',
-            right: '4%',
-            bottom: '3%',
-            containLabel: true
-        },
-        xAxis : [
-            {
-                type : 'category',
-                data : ['星期一', '星期二', '星期三', '星期四', '星期五', '星期六', '星期七'],
-                axisTick: {
-                    alignWithLabel: true
-                }
-            }
-        ],
-        yAxis : [
-            {
-                type : 'value'
-            }
-        ],
-        series : [
-            {
-                name:'当前数量',
-                type:'bar',
-                barWidth: '60%',
-                data:[8459,4845,5486,8974,6584,1536,3654]
-            }
-        ]
-    };
-
-
-    // 使用刚指定的配置项和数据显示图表。
-    myChart.setOption(option);
-</script>
 </html>

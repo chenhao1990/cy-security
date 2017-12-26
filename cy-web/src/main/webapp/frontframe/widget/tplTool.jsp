@@ -22,6 +22,7 @@
     <div class="layui-tab-content">
         <div class="layui-tab-item layui-show">
               <pre class="layui-code">
+
 <div cyType="tplTool" cyProps="url:'/frontframe/json/student.json'">
 
     <script type="text/html" >
