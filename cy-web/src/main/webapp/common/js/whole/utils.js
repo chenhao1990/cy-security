@@ -24,9 +24,10 @@
      * @Date: 2017/12/8
      */
     window.$t.Refresh=function () {
+        debugger
         var  frameindex= parent.layer.getFrameIndex(window.name);
         parent.layer.close(frameindex);
-        var parent_iframe=$(parent.document).find(".layui-show iframe")[0]||$(parent.document).find("iframe")[0];
+        var parent_iframe=$(parent.document).find("iframe.cy-show ")[0]||$(parent.document).find("iframe")[0];
         $(parent_iframe).contents().find(".search-btn").click();
     };
     /**
