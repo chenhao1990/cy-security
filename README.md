@@ -65,7 +65,7 @@
 
 增删改查页面
 
-![输入图片说明](https://gitee.com/uploads/images/2017/1213/155835_550b7c8c_1334796.png "屏幕截图.png")
+![输入图片说明](https://gitee.com/uploads/images/2017/1226/173206_cf4ab878_1334796.png "屏幕截图.png")
 
 
  **组件使用说明页面** 
