@@ -59,15 +59,13 @@
 
 首页默认菜单
 
-![输入图片说明](https://gitee.com/uploads/images/2017/1213/155649_2341a694_1334796.png "屏幕截图.png")
+![输入图片说明](https://gitee.com/uploads/images/2017/1226/173015_26a24abc_1334796.png "屏幕截图.png")
 
-前端框架默认菜单
 
-![输入图片说明](https://gitee.com/uploads/images/2017/1213/155743_8b6111d1_1334796.png "屏幕截图.png")
 
 增删改查页面
 
-![输入图片说明](https://gitee.com/uploads/images/2017/1213/155835_550b7c8c_1334796.png "屏幕截图.png")
+![输入图片说明](https://gitee.com/uploads/images/2017/1226/173206_cf4ab878_1334796.png "屏幕截图.png")
 
 
  **组件使用说明页面** 
