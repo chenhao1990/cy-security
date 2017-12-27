@@ -56,6 +56,7 @@ $(function () {
     });
     //选中tab
     $(".tabsPageHeaderContent").on("click", "li", function () {
+        debugger
         //当前是第几个li
         var li_index = $(this).prevAll().length + 1;
         $(this).parents(".content-wrapper").find(".tabsMoreList").find("li").removeClass("selected");
@@ -65,11 +66,16 @@ $(function () {
         $(".content").find("iframe[src='"+url+"']").addClass("cy-show");
     });
     //关闭tab
-    $(".tabsPageHeaderContent").on("click", ".close ", function () {
+    $(".tabsPageHeaderContent").on("click", ".close ", function (event) {
+
+        //关闭页面
+        var url=$(this).parents("li").attr("data-url");
+        $(".content").find("iframe[src='"+url+"']").remove();
 
         if ($(this).parents("li").hasClass("selected")) {
             $(this).parents("li").prev().click();
         }
+
         var _lis = $(this).parents(".tabsPageHeaderContent").find("li");
         var n = 0;
         for (var i = 0; i < _lis.length; i++) {
@@ -82,16 +88,13 @@ $(function () {
             $(".tabsRight,.tabsLeft").hide();
             $(this).parents(".content-wrapper").find(".navTab-tab").css("left", "0");
         }
-        //关闭页面
-        var url=$(this).parents("li").attr("data-url");
-        $(".content").find("iframe[src='"+url+"']").prev().addClass("cy-show");
-        $(".content").find("iframe[src='"+url+"']").remove();
+
 
         //当前是第几个li
         var li_index = $(this).parents("li").prevAll().length + 1;
         $(this).parents(".content-wrapper").find(".tabsMoreList").find("li:nth-child(" + li_index + ")").remove();
         $(this).parents("li").remove();
-
+        event.stopPropagation();
 
     });
     //右侧更多
@@ -116,7 +119,6 @@ $(function () {
     });
     //tab左移
     $(".tabsLeft").on("click", function () {
-        debugger
         var _left = $(this).parents(".content-wrapper").find(".navTab-tab").css("left");
         _left = parseInt(_left.substr(0, _left.length - 2));
         var abs = Math.abs(_left);
