@@ -129,18 +129,6 @@
                         PageGrid.toPage(obj, $grid, url);
                     }
                 });
-                // laypage({
-                //     cont: pageId
-                //     ,totalCount:R.page?R.page.totalCount:0
-                //     , pages: R.page?R.page.totalPage : 0
-                //     ,pageSize:defaultParam.limit
-                //     , skip: true
-                //     , skin: pageProps.pageColor
-                //     , jump: function (obj) {
-                //         //跳到分页页面
-                //         PageGrid.toPage(obj, $grid,url);
-                //     }
-                // });
             });
 
         },
@@ -288,6 +276,7 @@
                 }
                 PageGrid.renderCheckbox();
             }
+
         },
         /**跳到分页页面 by chenyi 2017/6/22*/
         toPage: function (obj, $grid, url) {

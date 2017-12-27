@@ -7,9 +7,9 @@ $(function () {
         var $this = $(this);
         var name = $this.text() || $this.attr("title");
         var url = unescape($this.attr("data-url")) || "";
-        debugger
         //判断该页面是否已存在
         if ($("#navTab").find("li[data-url='" + url + "']").length === 0) {
+            var index = Loading.open(1,false);
             //如果不存在
             $("#navTab").find("li").removeClass("selected");
             //新增tab页
@@ -30,6 +30,10 @@ $(function () {
             var iframe = $('<iframe class="cy-show" scrolling="yes" frameborder="0" style="width: 100%; height: 100%; overflow: visible; "></iframe>');
             $(iframe).attr("src", url);
             $(".content").append(iframe);
+            $(iframe).load(function() {
+                Loading.close(index);
+            });
+
             //tab过多时
             var _lis = $(".tabsPageHeaderContent").find("li");
             var n = 0;
@@ -42,6 +46,8 @@ $(function () {
             if (n > parseInt(_width)-150 ) {
                 $(".tabsRight,.tabsLeft").show();
             }
+
+
         }else{
             $("#navTab").find("li").removeClass("selected");
             $("#navTab").find("li[data-url='" + url + "']").addClass("selected");
@@ -56,7 +62,6 @@ $(function () {
     });
     //选中tab
     $(".tabsPageHeaderContent").on("click", "li", function () {
-        debugger
         //当前是第几个li
         var li_index = $(this).prevAll().length + 1;
         $(this).parents(".content-wrapper").find(".tabsMoreList").find("li").removeClass("selected");
