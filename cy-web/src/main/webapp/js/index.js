@@ -80,3 +80,49 @@ $(window).on('resize', function () {
     });
 }).resize();
 
+ function clearStorage() {
+    var index = layer.load(1, {
+        shade: [0.1,'#fff'] //0.1透明度的白色背景
+    });
+    localStorage.clear();
+    layer.close(index);
+    layer.msg('清除成功 !', {icon: 1});
+}
+
+function updatePassword (){
+    layer.open({
+        type: 1,
+        skin: 'layui-layer-molv',
+        title: "修改密码",
+        area: ['550px', '270px'],
+        shadeClose: false,
+        content: jQuery("#passwordLayer"),
+        btn: ['修改','取消'],
+        btn1: function (index) {
+            var data = "password="+$("#password").val()+"&newPassword="+$("#newPassword").val();
+            $.ajax({
+                type: "POST",
+                url: "sys/user/password",
+                data: data,
+                dataType: "json",
+                success: function(result){
+                    if(result.code == 0){
+                        layer.close(index);
+                        layer.alert('修改成功', function(index){
+                            location.reload();
+                        });
+                    }else{
+                        Msg.error(result.msg);
+                    }
+                }
+            });
+        }
+    });
+}
+
+$(document).ready(function () {
+    $.getJSON("sys/user/info?_"+$.now(), function(r){
+        $("#username").html(r.user.username) ;
+
+    });
+})
