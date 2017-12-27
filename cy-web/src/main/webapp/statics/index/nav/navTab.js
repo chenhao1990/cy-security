@@ -103,11 +103,12 @@ $(function () {
 
     });
     //右侧更多
-    $(".tabsMore, .tabsMoreList").on("mousemove", function () {
-        $(this).parents(".content-wrapper").find(".tabsMoreList").show();
+    $(".tabsMore, .tabsMoreList").on("click", function (event) {
+        $(this).parents(".content-wrapper").find(".tabsMoreList").toggle();
+        event.stopPropagation();
     });
-    $(".tabsMore, .tabsMoreList").on("mouseleave", function () {
-        $(this).parents(".content-wrapper").find(".tabsMoreList").hide();
+    $("body").click(function () {
+        $(".tabsMoreList").hide();
     });
 
     //右侧更多点击
@@ -128,7 +129,6 @@ $(function () {
         _left = parseInt(_left.substr(0, _left.length - 2));
         var abs = Math.abs(_left);
         //获取右侧区域宽度
-        debugger
         var _width = $("#navTab").width();
         if (parseInt(abs + 150) > _width) {
             Msg.info("拽不动了");

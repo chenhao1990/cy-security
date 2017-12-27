@@ -388,12 +388,17 @@ layui.use(['form'], function () {
     });
 });
 
-//数字过多时tips显示表格中数据
+
 $(function () {
+    //数字过多时tips显示表格中数据
     $(".nowrap").on("mouseover","td",(function(){
         if($(this).text().length>25){
             layer.tips($(this).text(), $(this));
         }
 
     }));
+     //隐藏右侧更多li
+     $("body").on("click",function () {
+       $(parent.document).contents().find(".tabsMoreList").hide();
+     })
 });
