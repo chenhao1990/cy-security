@@ -122,7 +122,7 @@ function updatePassword (){
 
 $(document).ready(function () {
     $.getJSON("sys/user/info?_"+$.now(), function(r){
-        $("#username").html(r.user.username) ;
+        $(".username").html(r.user.username) ;
 
     });
 })

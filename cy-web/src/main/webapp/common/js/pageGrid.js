@@ -126,7 +126,9 @@
                     , count: R.page ? R.page.totalCount : 0
                     , layout: ['count', 'prev', 'page', 'next', 'limit', 'skip']
                     , jump: function (obj) {
+                        var index=Loading.open(1,false);
                         PageGrid.toPage(obj, $grid, url);
+                        Loading.close(index);
                     }
                 });
             });
