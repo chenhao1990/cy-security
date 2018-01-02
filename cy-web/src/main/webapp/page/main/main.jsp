@@ -28,6 +28,25 @@
 </fieldset>
 <ul class="layui-timeline">
  <li class="layui-timeline-item">
+  <i class="ft-green layui-icon layui-timeline-axis layui-anim layui-anim-rotate layui-anim-loop">&#x1002;</i>
+  <div class="layui-timeline-content layui-text">
+   <h3 class="layui-timeline-title"></h3>
+   <p class="ft-green">熬夜更新中...</p>
+   <ul>
+    <li>springboot版</li>
+    <li>html版</li>
+   </ul>
+  </div>
+ </li>
+
+ <li class="layui-timeline-item">
+  <i class="layui-icon layui-timeline-axis">&#xe63f;</i>
+  <div class="layui-timeline-content layui-text">
+   <h3 class="layui-timeline-title">2018-01-02</h3>
+   <p class="a-link">修复列表页重复请求两次后台问题</p>
+  </div>
+ </li>
+ <li class="layui-timeline-item">
   <i class="layui-icon layui-timeline-axis">&#xe63f;</i>
   <div class="layui-timeline-content layui-text">
    <h3 class="layui-timeline-title">2017-12-26</h3>
