@@ -89,10 +89,10 @@ var Render = {
     },
     //渲染操作方法列
     customIcon: function (rowdata,renderData, index, value) {
-        if (value == "" || value == null) {
+        if (rowdata.icon == "" || rowdata.icon == null) {
             return "";
         }
-        var result = '<i class="' + value + ' fa-lg"></i>';
+        var result = '<i class="' + rowdata.icon + ' "></i>';
         return result;
     }
 

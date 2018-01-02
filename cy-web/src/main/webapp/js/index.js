@@ -90,34 +90,36 @@ $(window).on('resize', function () {
 }
 
 function updatePassword (){
-    layer.open({
-        type: 1,
-        skin: 'layui-layer-molv',
-        title: "修改密码",
-        area: ['550px', '270px'],
-        shadeClose: false,
-        content: jQuery("#passwordLayer"),
-        btn: ['修改','取消'],
-        btn1: function (index) {
-            var data = "password="+$("#password").val()+"&newPassword="+$("#newPassword").val();
-            $.ajax({
-                type: "POST",
-                url: "sys/user/password",
-                data: data,
-                dataType: "json",
-                success: function(result){
-                    if(result.code == 0){
-                        layer.close(index);
-                        layer.alert('修改成功', function(index){
-                            location.reload();
-                        });
-                    }else{
-                        Msg.error(result.msg);
-                    }
-                }
-            });
-        }
-    });
+        Alert.alert("测试账号不提供修改密码,请下载代码体验完整版");
+    //修改密码
+    // layer.open({
+    //     type: 1,
+    //     skin: 'layui-layer-molv',
+    //     title: "修改密码",
+    //     area: ['550px', '270px'],
+    //     shadeClose: false,
+    //     content: jQuery("#passwordLayer"),
+    //     btn: ['修改','取消'],
+    //     btn1: function (index) {
+    //         var data = "password="+$("#password").val()+"&newPassword="+$("#newPassword").val();
+    //         $.ajax({
+    //             type: "POST",
+    //             url: "sys/user/password",
+    //             data: data,
+    //             dataType: "json",
+    //             success: function(result){
+    //                 if(result.code == 0){
+    //                     layer.close(index);
+    //                     layer.alert('修改成功', function(index){
+    //                         location.reload();
+    //                     });
+    //                 }else{
+    //                     Msg.error(result.msg);
+    //                 }
+    //             }
+    //         });
+    //     }
+    // });
 }
 
 //打赏作者
@@ -143,7 +145,7 @@ function notice(){
         ,btnAlign: 'c'
         ,moveType: 1 //拖拽模式，0或者1
         ,content: ['<div style="padding: 50px; line-height: 22px; background-color: #393D49; color: #fff; font-weight: 300;">'
-            ,'1.未防止网友误删数据,已启用测试账号<br>&nbsp;&nbsp;&nbsp;如需管理员账号请加群<span style="color:#2991D9;" >275846351 &nbsp;&nbsp;&nbsp;<a target="_blank" href="//shang.qq.com/wpa/qunwpa?idkey=5b2ec31ee55abc44722cf8b2c7f7807d5b44d9a08da06de2c589c305e4742364"><img border="0" src="//pub.idqqimg.com/wpa/images/group.png" alt="cy-security" title="cy-security"></a></span><br><br>'
+            ,'1.为防止网友误删数据,已启用测试账号<br>&nbsp;&nbsp;&nbsp;如需管理员账号请加群<span style="color:#2991D9;" >275846351 &nbsp;&nbsp;&nbsp;<a target="_blank" href="//shang.qq.com/wpa/qunwpa?idkey=5b2ec31ee55abc44722cf8b2c7f7807d5b44d9a08da06de2c589c305e4742364"><img border="0" src="//pub.idqqimg.com/wpa/images/group.png" alt="cy-security" title="cy-security"></a></span><br><br>'
             ,'2.开源不易,如有帮助到你,请作者喝杯咖啡吧<br><br>'
             ,'3.打赏50元以上送<span style="color:#2991D9;" >定制视频</span>一份+<span style="color:#2991D9;" >html版前端框架 </span><br>'
             ,'&nbsp;&nbsp;&nbsp;(土豆作品地址<a href="http://id.tudou.com/i/UMTQ5MTY4MzM2MA" target="_blank" style="color:#2991D9;" >http://id.tudou.com/i/UMTQ5MTY4MzM2MA</a>)</div>'].join("")

@@ -5,7 +5,6 @@
 (function ($) {
     /* 入口函数 */
     $.fn.pageGrid = function () {
-
         //当前表格对象
         var $grid = this;
         //获取表格参数
@@ -33,6 +32,7 @@
         page: 1,
         sidx: '',
         order: 'desc',
+        init:true,
         _: new Date().getTime()
     };
     /*默认配置*/
@@ -126,9 +126,8 @@
                     , count: R.page ? R.page.totalCount : 0
                     , layout: ['count', 'prev', 'page', 'next', 'limit', 'skip']
                     , jump: function (obj) {
-                        var _R=R||"";
                         var index=Loading.open(1,false);
-                        PageGrid.toPage(_R,obj, $grid, url);
+                        PageGrid.toPage(R,obj, $grid, url);
                         Loading.close(index);
                     }
                 });
@@ -286,11 +285,12 @@
             defaultParam.page = obj.curr;
             /**增加每页显示条数 by chenyi 2017/08/21*/
             defaultParam.limit = obj.limit;
-            /**修复列表请求两次后台问题 by chenyi 2017/01/02*/
-            if(!R){
-                //获取数据
-                R=PageGrid.getData(url);
+            /**解决列表页两次请求后台问题 by chenyi 2018/01/02*/
+            //是否是首次加载列表
+            if(!defaultParam.init){
+                R = PageGrid.getData(url);
             }
+            defaultParam.init=false;
             // //渲染表格数据
             PageGrid.renderData(R, $grid, pageProps);
         },
@@ -300,6 +300,7 @@
                 var form = layui.form();
                 //监听提交
                 form.on('submit(search)', function (data) {
+
                     //获取对应的表格对象
                     var table_id = $(this).attr("table-id");
                     var _table = $("#" + table_id);
