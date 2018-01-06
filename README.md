@@ -1,5 +1,8 @@
 # cy-security1.1
 
+springboot版开发框架  cy-fast  [输入链接说明](https://gitee.com/leiyuxi/cy-fast)
+
+
  **框架说明** 
 
 1. 基于ssm+shiro安全框架的后台管理框架，权限简单易用可控制到按钮。
