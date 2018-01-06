@@ -1,6 +1,6 @@
 # cy-security1.1
 
-springboot版开发框架  cy-fast  [输入链接说明](https://gitee.com/leiyuxi/cy-fast)
+springboot版开发框架  cy-fast  [https://gitee.com/leiyuxi/cy-fast](https://gitee.com/leiyuxi/cy-fast)
 
 
  **框架说明** 
