@@ -147,7 +147,7 @@ function notice(){
         ,content: ['<div style="padding: 50px; line-height: 22px; background-color: #393D49; color: #fff; font-weight: 300;">'
             ,'1.为防止网友误删数据,已启用测试账号<br>&nbsp;&nbsp;&nbsp;如需管理员账号请加群<span style="color:#2991D9;" >275846351 &nbsp;&nbsp;&nbsp;<a target="_blank" href="//shang.qq.com/wpa/qunwpa?idkey=5b2ec31ee55abc44722cf8b2c7f7807d5b44d9a08da06de2c589c305e4742364"><img border="0" src="//pub.idqqimg.com/wpa/images/group.png" alt="cy-security" title="cy-security"></a></span><br><br>'
             ,'2.开源不易,如有帮助到你,请作者喝杯咖啡吧<br><br>'
-            ,'3.打赏50元以上送<span style="color:#2991D9;" >定制视频</span>一份+<span style="color:#2991D9;" >html版前端框架 </span><br>'
+            ,'3.打赏50元以上送<span style="color:#2991D9;" >定制视频</span>一份或<span style="color:#2991D9;" >html版前端框架 </span><br>'
             ,'&nbsp;&nbsp;&nbsp;(土豆作品地址<a href="http://id.tudou.com/i/UMTQ5MTY4MzM2MA" target="_blank" style="color:#2991D9;" >http://id.tudou.com/i/UMTQ5MTY4MzM2MA</a>)</div>'].join("")
         ,success: function(layero){
             var btn = layero.find('.layui-layer-btn');
