@@ -23,7 +23,7 @@
         PageGrid.setPage(R, $grid, pageProps.url);
         //设置查询表单
         PageGrid.searchForm();
-    };
+
     /*分页默认参数*/
     var defaultParam = {
         search: false,
@@ -336,7 +336,7 @@
             });
         }
     }
-
+    };
 })(jQuery);
 $(document).ready(function () {
     //表格渲染查询

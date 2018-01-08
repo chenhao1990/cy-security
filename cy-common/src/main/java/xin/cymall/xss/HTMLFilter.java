@@ -187,7 +187,6 @@ public final class HTMLFilter {
     }
 
     //---------------------------------------------------------------
-    // my versions of some PHP library functions
     public static String chr(final int decimal) {
         return String.valueOf((char) decimal);
     }

@@ -33,8 +33,22 @@
    <h3 class="layui-timeline-title"></h3>
    <p class="ft-green">熬夜更新中...</p>
    <ul>
-    <li>springboot版</li>
     <li>html版</li>
+    <li>cy-api前后端分离版</li>
+   </ul>
+  </div>
+ </li>
+
+ <li class="layui-timeline-item">
+  <i class="layui-icon layui-timeline-axis">&#xe63f;</i>
+  <div class="layui-timeline-content layui-text">
+   <h3 class="layui-timeline-title">2018-01-06</h3>
+   <p class="a-link">cy-fast</p>
+   <ul>
+    <li>基于springboot+shiro+freemarker的快速开发框架</li>
+    <li>分页表格增加排序功能</li>
+    <li>tab页增加右键菜单功能</li>
+    <li>flyway数据库版本管理</li>
    </ul>
   </div>
  </li>
