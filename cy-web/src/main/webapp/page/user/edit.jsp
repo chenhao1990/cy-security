@@ -46,33 +46,22 @@
             <label class="layui-form-label">所属部门</label>
             <div class="layui-input-normal">
 
-                <input value="${model.orgId}" id="demo"
+                <input id="org"
                        cyType="treeTool" cyProps="url:'/organize/select',name:'orgId'"
-                       placeholder="请选择所属部门" class="layui-input"/>
+                       value="${model.orgId}"   placeholder="请选择所属部门" class="layui-input"/>
 
             </div>
         </div>
         <div class="layui-form-item">
-            <label class="layui-form-label">角色</label>
-            <div cyType="selectTool" cyProps="url:'/sys/role/findAll',filter:'role'" name="roleIdList[]"
-                 value="${model.roleId}" lay-verify="required"
-                 class="layui-input-normal"></div>
+            <label class="layui-form-label">所属角色</label>
+            <div cyType="selectTool" cyProps="url:'/sys/role/findAll',multiple:'true'"
+                 value="${roleIdList}" name="roleIdList" class="layui-input-normal"></div>
         </div>
-        <div id="orderPowerType">
-            <c:if test="${model.roleId==2}">
-                <div class="layui-form-item">
-                    <label class="layui-form-label">订单权限类型</label>
-                    <div cyType="selectTool" cyProps="enumName:'OrderPowerTypeEnum',filter:'orderPowerType'"
-                         name="orderPowerType" value="${model.orderPowerType}" class="layui-input-normal"></div>
-                </div>
-            </c:if>
-        </div>
-        <div id="orderArea">
-            <c:if test="${model.roleId==2 and model.orderPowerType==1}">
-                <div class="layui-form-item"> <label class="layui-form-label">地区</label>
-                    <div cyType="selectTool" cyProps="enumName:'ProvinceEnum',multiple:'true',allBtn:'true'"
-                    value="${model.orderArea}" name="orderAreaArr" class="layui-input-block"></div> </div>
-            </c:if>
+
+        <div class="layui-form-item">
+            <label class="layui-form-label">状态</label>
+            <div cyType="radioTool" cyProps="enumName:'StateEnum'" name="status"
+                 value="${model.status}" class="layui-input-inline"></div>
         </div>
 
         <div class="page-footer">
@@ -87,46 +76,6 @@
         </div>
     </form>
 </div>
-<script>
 
-    layui.use(['form'], function () {
-        var form = layui.form();
-        form.on('select(role)', function (data) {
-            $("#orderPowerType").html('');
-            $("#orderArea").html('');
-            //如果是信息录入员
-            if (data.value == '2') {
-                $("#orderPowerType").html(' <div class="layui-form-item" > ' +
-                    '<label class="layui-form-label">订单权限类型</label> ' +
-                    '<div cyType="selectTool" cyProps="enumName:\'OrderPowerTypeEnum\',filter:\'orderPowerType\'"' +
-                    ' name="orderPowerType" value="" class="layui-input-normal"></div> </div>');
-
-                var selects = $("#orderPowerType [cyType='selectTool']");
-                for (var i = 0; i < selects.length; i++) {
-                    $(selects[i]).selectTool();
-                }
-                form.render('select');
-            }
-
-        });
-
-        form.on('select(orderPowerType)', function (data) {
-            $("#orderArea").html('');
-            //如果是信息录入员
-            if (data.value == '1') {
-                $("#orderArea").html(' <div class="layui-form-item"> <label class="layui-form-label">地区</label> ' +
-                    '<div cyType="selectTool" cyProps="enumName:\'ProvinceEnum\',multiple:\'true\',allBtn:\'true\'" ' +
-                    'value="" name="orderAreaArr" class="layui-input-block"></div> </div>');
-
-                var selects = $("#orderArea [cyType='selectTool']");
-                for (var i = 0; i < selects.length; i++) {
-                    $(selects[i]).selectTool();
-                }
-                form.render();
-            }
-
-        });
-    });
-</script>
 </body>
 </html>

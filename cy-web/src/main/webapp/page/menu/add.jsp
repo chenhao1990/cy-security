@@ -62,11 +62,14 @@
                 <code style="margin-top: 4px; display: block;">获取图标：http://fontawesome.io/icons/</code>
             </div>
         </div>
-        <div class="layui-form-item">
-            <div class="layui-input-block">
-
-                <button class="layui-btn" lay-submit="" lay-filter="submit" data-url="/sys/menu/save">保存</button>
-                <button class="layui-btn" onclick="$t.closeWindow();"> 返回</button>
+        <div class="page-footer">
+            <div class="btn-list">
+                <div class="btnlist">
+                    <button class="layui-btn" lay-submit="" lay-filter="submit" data-url="/sys/menu/save"><i
+                            class="fa fa-floppy-o">&nbsp;</i>保存
+                    </button>
+                    <button class="layui-btn" onclick="$t.closeWindow();"><i class="fa fa-undo">&nbsp;</i>返回</button>
+                </div>
             </div>
         </div>
     </form>

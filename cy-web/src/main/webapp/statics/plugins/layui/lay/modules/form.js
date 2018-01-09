@@ -153,9 +153,9 @@ layui.define('layer', function(exports){
                         dds.removeClass(HIDE);
 
                         //上下定位识别
-                        // if(top + dlHeight > win.height() && top >= dlHeight){
-                        //     reElem.addClass(CLASS + 'up');
-                        // }
+                        if(top + dlHeight > win.height() && top >= dlHeight){
+                            reElem.addClass(CLASS + 'up');
+                        }
                     }, hideDown = function(choose){
                         reElem.removeClass(CLASS+'ed ' + CLASS+'up');
                         input.blur();
@@ -341,8 +341,8 @@ layui.define('layer', function(exports){
                         ,selected = $(select.options[select.selectedIndex]) //获取当前选中项
                         ,optionsFirst = select.options[0];
                     if(typeof othis.attr('multiple') && typeof othis.attr('multiple') === 'string'){
-                      /**2017/11/22 chenyi 获取select中的value  多个值用逗号隔开*/
-                       var values=othis.attr('value')||"";
+                        /**2017/11/22 chenyi 获取select中的value  多个值用逗号隔开*/
+                        var values=othis.attr('value')||"";
                         var value = values.split(",");
                     }else{
                         var value = select.value;
@@ -366,19 +366,19 @@ layui.define('layer', function(exports){
                                     for(var aList = 0;aList<value.length;aList++){
                                         /**2017/11/22 chenyi 下拉多选数据回填*/
                                         if(value[aList]){
-                                          //获取select下所有option
+                                            //获取select下所有option
                                             var options=$(select).find("option");
                                             if(options){
-                                              for(var option=0;option<options.length;option++){
-                                                 var _value= $(options[option]).attr('value');
-                                                  if(_value==value[aList]){
-                                                      aLists.push("<a href='javascript:;'><span>"+$(options[option]).text()+"</span><i></i></a>");
-                                                  }
+                                                for(var option=0;option<options.length;option++){
+                                                    var _value= $(options[option]).attr('value');
+                                                    if(_value==value[aList]){
+                                                        aLists.push("<a href='javascript:;'><span>"+$(options[option]).text()+"</span><i></i></a>");
+                                                    }
 
-                                              }
+                                                }
                                             }
 
-                                          
+
                                         }
                                     }
                                 }
@@ -406,12 +406,12 @@ layui.define('layer', function(exports){
                                 return arr.join('');
                             }(othis.find('*')) + '</dl>'
                             , '</div>'].join(''));
-                           
+
                         hasRender[0] && hasRender.remove(); //如果已经渲染，则Rerender
                         othis.after(reElem);
                         events.call(this, reElem, disabled, isMultiple);
                     }else{
-                        
+
                         var reElem = $(['<div class="' + (isSearch ? '' : 'layui-unselect ') + CLASS + (disabled ? ' layui-select-disabled' : '') + '">'
                             , '<div class="' + TITLE + '"><input type="text" placeholder="' + placeholder + '" value="' + (value ? selected.html() : '') + '" ' + (isSearch ? '' : 'readonly') + ' class="layui-input' + (isSearch ? '' : ' layui-unselect') + (disabled ? (' ' + DISABLED) : '') + '">'
                             , '<i class="layui-edge"></i></div>'

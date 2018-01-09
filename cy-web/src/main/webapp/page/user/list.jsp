@@ -53,11 +53,11 @@
             </th>
             <!--isPrimary：是否是主键-->
             <th width="10%" param="{name:'userId',isPrimary:'true',hide:'true'}">用户ID</th>
-            <th width="10%" param="{name:'username'}">用户名</th>
+            <th width="10%" param="{name:'username',sort:'true'}">用户名</th>
             <th width="10%" param="{name:'roleId'}">所属角色</th>
             <th width="10%" param="{name:'email'}">邮箱</th>
             <th width="10%" param="{name:'mobile'}">手机号</th>
-            <th width="10%" param="{name:'createTime'}">创建时间</th>
+            <th width="10%" param="{name:'createTime',sort:'true'}">创建时间</th>
         </tr>
         </thead>
     </table>

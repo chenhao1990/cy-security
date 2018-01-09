@@ -64,7 +64,7 @@
             </th>
             <!--isPrimary：是否是主键-->
             <th width="10%" param="{name:'menuId',isPrimary:'true',hide:'true'}">菜单ID</th>
-            <th width="10%" param="{name:'name'}">菜单名称</th>
+            <th width="10%" param="{name:'name',sort:'true'}">菜单名称</th>
             <th width="10%" param="{name:'parentName'}">上级菜单</th>
             <th width="10%" param="{name:'icon',render:'Render.customIcon'}">菜单图标</th>
             <th width="10%" param="{name:'url'}">菜单URL</th>

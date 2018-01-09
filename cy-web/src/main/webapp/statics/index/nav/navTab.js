@@ -163,3 +163,34 @@ $(function () {
         $(this).removeClass("hover");
     });
 });
+
+$(document).ready(function(){
+    context.init({preventDoubleContext: false});
+    context.settings({compress: true});
+    context.attach('.navTab-tab li', [//attach为绑定的dom对象，可以使用类名或id，例如'.classname'
+        {text: '刷新当前页面', action: function(e){
+
+            e.preventDefault();
+            var dataUrl=$(this).parents("ul").attr("data-url");
+            var $iframe=$("section iframe[src='"+dataUrl+"']");
+            $($iframe[0]).attr("src",dataUrl);
+
+        }},
+        {text: '关闭当前页面', action: function(e){
+            e.preventDefault();
+            var dataUrl=$(this).parents("ul").attr("data-url");
+            $(".navTab-tab li[data-url='"+dataUrl+"']").find(".close").click();
+        }},
+        {text: '关闭其他页面', action: function(e){
+            e.preventDefault();
+            var dataUrl=$(this).parents("ul").attr("data-url");
+            $(".navTab-tab li[data-url='"+dataUrl+"']").prevAll().find(".close").click();
+            $(".navTab-tab li[data-url='"+dataUrl+"']").nextAll().find(".close").click();
+
+        }},
+        {text: '关闭所有页面', action: function(e){
+            var dataUrl=$(this).parents("ul").attr("data-url");
+            $(".navTab-tab li[data-url='"+dataUrl+"']").parents("ul").find("li .close").click();
+        }},
+    ]);
+});

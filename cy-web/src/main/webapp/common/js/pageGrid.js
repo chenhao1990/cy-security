@@ -23,6 +23,9 @@
         PageGrid.setPage(R, $grid, pageProps.url);
         //设置查询表单
         PageGrid.searchForm();
+        //排序
+        PageGrid.sort();
+    };
 
     /*分页默认参数*/
     var defaultParam = {
@@ -43,11 +46,9 @@
         getData: function (url) {
             var data;
             $.ajax({
-                //url: "/sys/menu/list",
                 url: url,
                 async: false,
                 data: defaultParam,
-                type: 'post',
                 dataType: "json",
                 success: function (R) {
                     if (R.code == 0) {
@@ -140,14 +141,27 @@
             var _grid = $grid;
             //获取所有th
             var _th = _grid.find("thead th");
+
             _grid.find("tbody").remove();
             //创建tbody
             _grid.append("<tbody><tbody/>");
-            //判断是否有隐藏的列
+
             for (var i = 0; i < _th.length; i++) {
-                var isHide = eval("(" + $(_th[i]).attr("param") + ")").hide || "false";
+                var _param=eval("(" + $(_th[i]).attr("param") + ")");
+                //判断是否有隐藏的列
+                var isHide = _param.hide || "false";
                 if (isHide == "true") {
                     $(_th[i]).hide();
+                }
+
+                //是否开启排序功能
+                var sort=_param.sort||"false";
+                var _name=_param.name;
+                var thHtml=$(_th[i]).text();
+                if(sort=="true"){
+                    var _order=defaultParam.sidx===_name?defaultParam.order:"desc";
+                    $(_th[i]).html([thHtml,'<i class="fa fa-sort-'+_order+'"  style="position: absolute;right: 5px;"></i>'].join(""));
+                    $(_th[i]).css("cursor","pointer");
                 }
             }
 
@@ -300,7 +314,6 @@
                 var form = layui.form();
                 //监听提交
                 form.on('submit(search)', function (data) {
-
                     //获取对应的表格对象
                     var table_id = $(this).attr("table-id");
                     var _table = $("#" + table_id);
@@ -335,8 +348,34 @@
                 });
             });
         }
+        /**表格排序 by chenyi 2018/01/03*/
+        ,sort:function () {
+            $("[cyType='pageGrid']").on("click","th",function () {
+                var $grid=$(this).parents("table");
+                var _param=eval("(" + $(this).attr("param") + ")");
+
+                if($(this).find("i").hasClass("fa-sort-asc")){
+                    $(this).find("i").attr("class","fa fa-sort-desc");
+                    defaultParam.sidx=_param.name;
+                    defaultParam.order="desc";
+                    var R = PageGrid.getData(pageProps.url);
+                    PageGrid.renderData(R, $grid, pageProps);
+                    return;
+                }
+                if($(this).find("i").hasClass("fa-sort-desc")){
+                    $(this).find("i").attr("class","fa fa-sort-asc");
+                    defaultParam.sidx=_param.name;
+                    defaultParam.order="asc";
+                    var R = PageGrid.getData(pageProps.url);
+                    PageGrid.renderData(R, $grid, pageProps);
+                    return;
+                }
+
+            });
+
+        }
     }
-    };
+
 })(jQuery);
 $(document).ready(function () {
     //表格渲染查询
@@ -344,5 +383,6 @@ $(document).ready(function () {
     for (var i = 0; i < tables.length; i++) {
         $(tables[i]).pageGrid();
     }
+
 
 });

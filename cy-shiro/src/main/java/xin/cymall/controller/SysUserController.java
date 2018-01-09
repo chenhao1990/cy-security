@@ -4,6 +4,7 @@ package xin.cymall.controller;
 import xin.cymall.annotation.SysLog;
 import xin.cymall.entity.SysRole;
 import xin.cymall.entity.SysUser;
+import xin.cymall.enumresource.DefaultEnum;
 import xin.cymall.service.SysRoleService;
 import xin.cymall.service.SysUserRoleService;
 import xin.cymall.service.SysUserService;
@@ -152,30 +153,14 @@ public class SysUserController extends AbstractController {
 	@RequestMapping("/save")
 	@RequiresPermissions("sys:user:list")
 	public R save(@RequestBody SysUser user){
-		user.setPassword("123456");
-		ValidatorUtils.validateEntity(user, AddGroup.class);
 		SysUser existUser = sysUserService.queryByUserName(user.getUsername());
 		if(existUser!=null){
 			return R.error("用户名已存在!");
 		}
-		//设置地区
-		String orderArea="";
-		if(!StringUtil.isNullOrEmpty(user.getOrderAreaArr())){
-			for (int i=0;i<user.getOrderAreaArr().length;i++) {
-				if (i==0){
-					orderArea+=user.getOrderAreaArr()[0];
-				}else{
-					orderArea+=","+user.getOrderAreaArr()[i];
-				}
-
-			}
-		}
-
-		user.setRoleId(user.getRoleIdList().get(0).toString());
-		user.setOrderArea(orderArea);
+		user.setPassword(DefaultEnum.PASSWORD.getCode());
 		user.setCreateUserId(getUserId());
 		sysUserService.save(user);
-		
+
 		return R.ok();
 	}
 	
@@ -187,25 +172,6 @@ public class SysUserController extends AbstractController {
 	@RequestMapping("/update")
 	@RequiresPermissions("sys:user:list")
 	public R update(@RequestBody SysUser user){
-//		ValidatorUtils.validateEntity(user, UpdateGroup.class);
-//		SysUser existUser = sysUserService.queryByUserName(user.getUsername());
-//		if(existUser!=null){
-//			return R.error("用户名已存在!");
-//		}
-		//设置地区
-		String orderArea="";
-		if(!StringUtil.isNullOrEmpty(user.getOrderAreaArr())){
-			for (int i=0;i<user.getOrderAreaArr().length;i++) {
-				if (i==0){
-					orderArea+=user.getOrderAreaArr()[0];
-				}else{
-					orderArea+=","+user.getOrderAreaArr()[i];
-				}
-
-			}
-		}
-		user.setRoleId(user.getRoleIdList().get(0).toString());
-		user.setOrderArea(orderArea);
 		user.setCreateUserId(getUserId());
 		sysUserService.update(user);
 		

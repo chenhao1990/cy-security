@@ -254,3 +254,11 @@ blockquote .file-div{
 
 }
 
+[cyType='pageGrid'] th i.fa-sort-asc{
+    top:15px;
+}
+
+/*右键菜单*/
+ul.dropdown-menu li{
+    margin: 5px!important;
+}

@@ -89,7 +89,6 @@
         },
         /**获取数据 by chenyi 2017/7/19*/
         getDataByEnum: function (enumName) {
-
             /**localStorage是否已存在该数据*/
             var data = $t.getStorageItem(enumName);
             if (!data) {
@@ -190,10 +189,46 @@
                 }
             }
             //渲染下拉框
-            layui.use('form', function () {
+            layui.use(['form'], function () {
                 var form = layui.form();
-                form.render();
+                //监听提交
+                form.on('select()', function (data) {
+                    return false;
+                });
+                //下拉框监听事件
+                form.on('select(area)', function (data) {
+
+                    //当前元素的父节点
+                    var _grid = $(data.othis).parent();
+                    //删除当前点击的下级地区dom
+                    $(_grid).nextAll(".layui-input-inline").remove();
+                    //当前点击的id
+                    var parentId = data.value;
+                    if (parentId != "") {
+                        //获取所有下级地区
+                        var R = selectTool.getDataByUrl("/area/normalList/" + parentId);
+
+                        var areaData = R.data;
+                        if (areaData.length > 0) {
+                            var _div = '<div id="div_' + data.value + '" class="layui-input-inline" ></div>';
+                            $(_grid).after(_div);
+                            var _select = '<select id="select_' + data.value + '" name="parentAreaIds[]" lay-search lay-filter="area" ></select>';
+                            $("#div_" + data.value).append(_select);
+                            $("#select_" + data.value).append('<option value="">请选择</option>');
+                            for (var i = 0; i < areaData.length; i++) {
+                                var _option = '<option value="' + areaData[i].code + '">' + areaData[i].value + '</option>';
+                                $("#select_" + data.value).append(_option);
+                            }
+                        }
+
+                        form.render('select');
+                    }
+                    return false;
+
+                });
+
             });
+
 
         }
     }

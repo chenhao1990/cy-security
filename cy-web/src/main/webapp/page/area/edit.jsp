@@ -33,24 +33,12 @@
                      value="${model.state}" class="layui-input-inline"></div>
             </div>
         </div>
-        <%--<div class="layui-form-item">--%>
-        <%--<label class="layui-form-label">行政级别</label>--%>
-        <%--<div class="layui-input-normal">--%>
-        <%--<div cyType="selectTool" cyProps="codeName:'areaLevel'" name="areaLevel"  class="layui-input-inline"></div>--%>
-        <%--</div>--%>
-        <%--</div>--%>
-
-        <%--<div class="layui-form-item">--%>
-            <%--<label class="layui-form-label">上级地区</label>--%>
-            <%--<div class="layui-input-inline" style="width:700px;">--%>
-                <%--<div cyType="selectTool" cyProps="url:'/area/normalList/0000000000',filter:'area'" name="parentAreaIds[]" value="" lay-verify="required"--%>
-                     <%--class="layui-input-inline"></div>--%>
-            <%--</div>--%>
-        <%--</div>--%>
-        <div class="layui-form-item">
-            <div class="layui-input-block">
-                <button class="layui-btn" lay-submit="" lay-filter="submit" data-url="/area/update">保存</button>
-                <button  class="layui-btn" onclick="$t.closeWindow();"> 返回</button>
+        <div class="page-footer">
+            <div class="btn-list">
+                <div class="btnlist">
+                    <button class="layui-btn" lay-submit="" lay-filter="submit" data-url="/area/update"><i class="fa fa-floppy-o">&nbsp;</i>保存</button>
+                    <button class="layui-btn" onclick="$t.closeWindow();"><i class="fa fa-undo">&nbsp;</i>返回</button>
+                </div>
             </div>
         </div>
     </form>
