@@ -69,36 +69,8 @@
         </form>
     </div>
 <script>
-    layui.use(['form'], function(){
+    layui.use(['form'], function () {
         var form = layui.form();
-        //监听提交
-//        form.on('submit(submit)', function(data){
-//
-//            var url ="/sys/menu/update" ;
-//            $.ajax({
-//                //url: "/sys/menu/list",
-//                type: "post",
-//                url: url,
-//                contentType: "application/json",
-//                data: JSON.stringify(data.field),
-//                async: false,
-//                dataType:"json",
-//                success: function (R) {
-//                    if(R.code === 0){
-//                        alert('操作成功', function(index){
-//                            closeWindow();
-//                        });
-//                    }else{
-//                        alert(R.msg);
-//                    }
-//                },
-//                error:function(){
-//                    alert("系统繁忙");
-//                }
-//            });
-//            return false;
-//        });
-
         //监听单选
         form.on('radio(menuType)', function (data) {
             if (data.value == 0) {
@@ -125,16 +97,16 @@
 
 
     });
-   $(document).ready(function(){
-       if($("[lay-filter='menuType_0']").attr("checked")!=undefined){
-           $("[name='url']").parent().parent().hide();
-           $("[name='perms']").parent().parent().hide();
-       }
-       if($("[lay-filter='menuType_2']").attr("checked")!=undefined){
-           $("[name='url']").parent().parent().hide();
-           $("[name='order_num']").parent().parent().hide();
-           $("[name='icon']").parent().parent().hide();
-       }
+    $(document).ready(function () {
+        if ($($("[lay-filter='menuType']")[0]).attr("checked")  != undefined) {
+            $("[name='url']").parents(".layui-form-item").hide();
+            $("[name='perms']").parents(".layui-form-item").hide();
+        }
+        if ($($("[lay-filter='menuType']")[2]).attr("checked")  != undefined) {
+            $("[name='url']").parents(".layui-form-item").hide();
+            $("[name='order_num']").parents(".layui-form-item").hide();
+            $("[name='icon']").parents(".layui-form-item").hide();
+        }
     });
 </script>
 </body>

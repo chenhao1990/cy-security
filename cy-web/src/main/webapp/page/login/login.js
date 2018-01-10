@@ -6,11 +6,11 @@ layui.config({
         $ = layui.jquery;
     //登录按钮事件
     form.on("submit(login)", function (data) {
-        var datas = "username=" + data.field.username + "&password=" + data.field.password + "&captcha=" + data.field.captcha;
         $.ajax({
             type: "POST",
             url: "/sys/login",
-            data: datas,
+            contentType: "application/json",
+            data: JSON.stringify(data.field),
             dataType: "json",
             success: function (result) {
                 if (result.code == 0) {//登录成功

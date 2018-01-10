@@ -1,6 +1,10 @@
 package xin.cymall.controller;
 
+import org.apache.commons.lang.StringUtils;
+import org.springframework.web.bind.annotation.RequestBody;
+import xin.cymall.entity.SysCode;
 import xin.cymall.service.SysUserService;
+import xin.cymall.utils.RRException;
 import xin.cymall.utils.ShiroUtils;
 import xin.cymall.utils.R;
 
@@ -27,6 +31,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.google.code.kaptcha.Constants;
 import com.google.code.kaptcha.Producer;
+import xin.cymall.vo.Login;
 
 /**
  * 登录相关
@@ -62,17 +67,19 @@ public class SysLoginController {
 	 */
 	@ResponseBody
 	@RequestMapping(value = "/sys/login", method = RequestMethod.POST)
-	public R login(String username, String password, String captcha)throws IOException {
+	public R login(@RequestBody Login login)throws IOException {
+		if(StringUtils.isEmpty(login.getCaptcha())||StringUtils.isEmpty(login.getUsername())||StringUtils.isEmpty(login.getPassword())){
+			throw new RRException("参数不能为空");
+		}
 		String kaptcha = ShiroUtils.getKaptcha(Constants.KAPTCHA_SESSION_KEY);
-		if(!captcha.equalsIgnoreCase(kaptcha)){
+		if(!login.getCaptcha().equalsIgnoreCase(kaptcha)){
 			return R.error("验证码不正确");
 		}
-//
 		try{
 			Subject subject = ShiroUtils.getSubject();
 			//sha256加密
-			password = new Sha256Hash(password).toHex();
-			UsernamePasswordToken token = new UsernamePasswordToken(username, password);
+			String password = new Sha256Hash(login.getPassword()).toHex();
+			UsernamePasswordToken token = new UsernamePasswordToken(login.getUsername(), password);
 			subject.login(token);
 		}catch (UnknownAccountException e) {
 			return R.error(e.getMessage());
