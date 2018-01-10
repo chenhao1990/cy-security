@@ -25,7 +25,7 @@
 				order by ${sidx} ${order}
 			</when>
 			<otherwise>
-				order by role_id asc
+				order by role_id desc
 			</otherwise>
 		</choose>
 		<if test="offset != null and limit != null">
