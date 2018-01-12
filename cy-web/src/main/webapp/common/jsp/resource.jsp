@@ -18,6 +18,7 @@
 <script src="${rc.contextPath}/common/js/uploadTool.js"></script>
 <script src="${rc.contextPath}/common/js/HuploadTool.js"></script>
 <script src="${rc.contextPath}/common/js/tplTool.js"></script>
+<script src="${rc.contextPath}/common/js/starTool.js"></script>
 <script src="${rc.contextPath}/common/js/editGrid.js"></script>
 <!--全局-->
 <script src="${rc.contextPath}/common/js/whole/cyLayer.js"></script>

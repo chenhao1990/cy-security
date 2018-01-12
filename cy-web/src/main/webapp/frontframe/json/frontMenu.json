@@ -240,6 +240,14 @@
               "name": "下拉树",
               "type": 1,
               "url": "frontframe/widget/treeTool.jsp"
+            },
+            {
+              "children": null,
+              "icon": "",
+              "list": null,
+              "name": "星级插件",
+              "type": 1,
+              "url": "frontframe/widget/starTool.jsp"
             }
           ],
           "url": ""
