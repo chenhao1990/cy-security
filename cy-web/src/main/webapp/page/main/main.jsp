@@ -39,6 +39,21 @@
   </div>
  </li>
 
+
+ <li class="layui-timeline-item">
+  <i class="layui-icon layui-timeline-axis">&#xe63f;</i>
+  <div class="layui-timeline-content layui-text">
+   <h3 class="layui-timeline-title">2018-01-12</h3>
+   <p class="a-link">引入星级插件</p>
+   <ul>
+    <li>新增starTool.js 文件</li>
+    <li>新增 /statics/img/star 下图片文件</li>
+    <li>新增前端文档 starTool.jsp 文件 </li>
+    <li>resource.jsp中引入starTool.js即可使用</li>
+   </ul>
+  </div>
+ </li>
+
  <li class="layui-timeline-item">
   <i class="layui-icon layui-timeline-axis">&#xe63f;</i>
   <div class="layui-timeline-content layui-text">
