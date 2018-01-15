@@ -346,6 +346,30 @@
                     });
                     form.render('checkbox');
                 });
+
+                var filter = pageProps.filter || "choose";
+                form.on('checkbox('+filter+')', function (data) {
+                    var child = $(data.elem).parents('table').find('[type="checkbox"]');
+                    var allChoose=$(data.elem).parents('table').find("[lay-filter='allChoose']");
+                    var flag=true;
+                    child.each(function (index, item) {
+                        if(index>0&&item.checked == false){
+                            allChoose.each(function (index2, item2) {
+                                item2.checked = false;
+                            });
+                            flag=false;
+                        }
+
+                    });
+
+                    if(flag){
+                        allChoose.each(function (index, item) {
+                            item.checked = true;
+                        });
+                    }
+                    form.render('checkbox');
+                });
+
             });
         }
         /**表格排序 by chenyi 2018/01/03*/
