@@ -1,6 +1,6 @@
 # cy-security1.1
 
- **官网**  [输入链接说明](http://www.cymall.xin/)
+ **官网**  [http://www.cymall.xin/(http://www.cymall.xin/)
 
  **springboot版开发框架  cy-fast  [https://gitee.com/leiyuxi/cy-fast](https://gitee.com/leiyuxi/cy-fast)** 
 
@@ -54,6 +54,7 @@
 
  **如何交流、反馈、参与贡献？** 
 
+- 官网首页 http://www.cymall.xin
 - 项目主页 http://admin.cymall.xin
 - 码云地址 https://gitee.com/leiyuxi/cy-security
 - 中国开源 https://www.oschina.net/p/cy-security
