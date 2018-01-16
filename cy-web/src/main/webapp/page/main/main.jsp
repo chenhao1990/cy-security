@@ -46,6 +46,7 @@
    <p class="a-link">优化</p>
    <ul>
     <li>优化列表页全选联动 -》pageGrid.js </li>
+    <li>列表下图片点击全览 -》monitor.js </li>
 
    </ul>
   </div>
