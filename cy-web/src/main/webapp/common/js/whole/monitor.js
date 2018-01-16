@@ -37,7 +37,7 @@ $(function () {
     });
 
     //图片点击放大
-    $(".layui-upload-list").on("click","img",function () {
+    $(".layui-upload-list,.layui-table").on("click","img",function () {
         var url=$(this).attr("src");
         var img = new Image();
         img.src = url;
