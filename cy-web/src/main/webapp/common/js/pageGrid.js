@@ -15,6 +15,15 @@
         pageProps = pageProps ? pageProps : "";
         //将表格参数转为json
         pageProps = eval("({" + pageProps + "})");
+        //表格渲染前需要执行的方法
+        var beforeRender=pageProps.beforeRender||"";
+        if(beforeRender){
+            var beforeRenders=beforeRender.split(",");
+            $.each(beforeRenders,function (index,item) {
+                var _func=eval((item));
+                _func();
+            })
+        }
         //设置每页显示条数
         defaultParam.limit = pageProps.pageSize || 10;
         //从后台获取数据
@@ -181,6 +190,7 @@
             }
             var primary = "";
             var attr = new Array();
+
             for (var i = 0; i < data.length; i++) {
                 //原始数据
                 var rowdata=$.extend(true,[], data[i]);
@@ -275,7 +285,7 @@
                 //如果需要复选框
                 if (isCheckbox == "true") {
                     //获取监控标识
-                    var filter = pageProps.filter || "";
+                    var filter = pageProps.filter || "choose";
                     var checkboxTd = '<td><input type="checkbox"   primary="' + primary + '" lay-skin="primary"></td>';
                     //复选框监听标识
                     if (filter != "") {
@@ -291,6 +301,17 @@
 
                 }
                 PageGrid.renderCheckbox();
+            }
+
+
+            //表格渲染后需要执行的方法
+            var afterRender=pageProps.afterRender||"";
+            if(afterRender){
+                var afterRenders=afterRender.split(",");
+                $.each(afterRenders,function (index,item) {
+                    var _func=eval((item));
+                    _func();
+                })
             }
 
         },
@@ -345,6 +366,16 @@
                         item.checked = data.elem.checked;
                     });
                     form.render('checkbox');
+
+                    //复选框点击需要执行的方法
+                    var onCheck=pageProps.onCheck||"";
+                    if(onCheck){
+                        var onChecks=onCheck.split(",");
+                        $.each(onChecks,function (index,item) {
+                            var _func=eval((item));
+                            _func(data);
+                        })
+                    }
                 });
 
                 var filter = pageProps.filter || "choose";
@@ -368,6 +399,16 @@
                         });
                     }
                     form.render('checkbox');
+
+                    //复选框点击需要执行的方法
+                    var onCheck=pageProps.onCheck||"";
+                    if(onCheck){
+                        var onChecks=onCheck.split(",");
+                        $.each(onChecks,function (index,item) {
+                            var _func=eval((item));
+                            _func(data);
+                        })
+                    }
                 });
 
             });

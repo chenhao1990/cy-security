@@ -10,7 +10,7 @@
 <head>
     <title>表格控件</title>
     <%@ include file="/common/jsp/resource.jsp" %>
-    <script type="text/javascript" src="/page/commpara/js/list.js"></script>
+    <script type="text/javascript" src="/frontframe/widget/js/list.js"></script>
 </head>
 <body>
 <div class="layui-input-inline">
@@ -28,7 +28,9 @@
             <code style="margin-top: 4px; display: block;">表格代码示例</code>
             <textarea class="layui-textarea" rows="28">
             <div class="layui-form ">
-               <table class="layui-table" id="commparaTable" cyType="pageGrid" cyProps="url:'/commpara/list',checkbox:'true',pageColor:'#2991d9'">
+               <table class="layui-table" id="commparaTable" cyType="pageGrid"
+                      cyProps="url:'/commpara/list',checkbox:'true',pageColor:'#2991d9'
+                      ,beforeRender:'Render.beforeRender',onCheck:'Render.onCheck',afterRender:'Render.afterRender'">
                   <thead>
                       <tr>
                             <!--复选框-->
@@ -77,7 +79,9 @@
 
         <div class="layui-tab-item" id="result">
             <div class="layui-form">
-                    <table class="layui-table" id="commparaTable" cyType="pageGrid"  cyProps="url:'/commpara/list',checkbox:'true',pageColor:'#2991d9'">
+                <table class="layui-table" id="commparaTable" cyType="pageGrid"
+                       cyProps="url:'/commpara/list',checkbox:'true',pageColor:'#2991d9'
+                      ,beforeRender:'Render.beforeRender',onCheck:'Render.onCheck',afterRender:'Render.afterRender'">
                         <thead>
                         <tr>
                             <!--复选框-->
@@ -139,6 +143,24 @@
                     <td>yProps="checkbox:'true'"</td>
                 </tr>
                 <tr>
+                    <td>cyProps:beforeRender</td>
+                    <td>表格渲染前需要执行的方法</td>
+                    <td>null</td>
+                    <td>cyProps="beforeRender:'Render.beforeRender"</td>
+                </tr>
+                <tr>
+                    <td>cyProps:beforeRender</td>
+                    <td>表格渲染后需要执行的方法</td>
+                    <td>null</td>
+                    <td>cyProps="afterRender:'Render.afterRender"</td>
+                </tr>
+                <tr>
+                    <td>cyProps:onCheck</td>
+                    <td>复选框点击需要时执行的方法</td>
+                    <td>null</td>
+                    <td>cyProps="onCheck:'Render.onCheck"</td>
+                </tr>
+                <tr>
                     <td>cyProps:pageColor</td>
                     <td>分页样式</td>
                     <td>#2991d9</td>
@@ -179,6 +201,12 @@
                     <td>是否隐藏</td>
                     <td>false</td>
                     <td>param="{hide:'true'}"</td>
+                </tr>
+                <tr>
+                    <td>param.sort</td>
+                    <td>是否开启排序</td>
+                    <td>false</td>
+                    <td>param="{sort:'true'}"</td>
                 </tr>
                 <tr>
                     <td>param.codeName</td>

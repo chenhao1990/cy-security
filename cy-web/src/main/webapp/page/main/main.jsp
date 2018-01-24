@@ -42,10 +42,10 @@
  <li class="layui-timeline-item">
   <i class="layui-icon layui-timeline-axis">&#xe63f;</i>
   <div class="layui-timeline-content layui-text">
-   <h3 class="layui-timeline-title">2018-01-12</h3>
+   <h3 class="layui-timeline-title">2018-01-24</h3>
    <p class="a-link">优化</p>
    <ul>
-    <li>优化列表页全选联动 -》pageGrid.js </li>
+    <li>优化列表页全选联动|列表页添加表格渲染前方法、表格渲染后方法、复选框点击方法 -》pageGrid.js </li>
     <li>列表下图片点击全览 -》monitor.js </li>
 
    </ul>

@@ -85,7 +85,8 @@
 </div>
 <div class="layui-form nowrap">
     <table class="layui-table" id="studentTable" cyType="pageGrid"
-           cyProps="url:'/frontframe/json/student.json',checkbox:'true',pageColor:'#2991d9'">
+           cyProps="url:'/frontframe/json/student.json',checkbox:'true',pageColor:'#2991d9'
+                    ,beforeRender:'Render.beforeRender',onCheck:'Render.onCheck',afterRender:'Render.afterRender'">
         <thead>
         <tr>
             <!--复选框-->
