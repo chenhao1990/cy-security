@@ -53,7 +53,7 @@
                     $("#" + _uploadId + "_imgs").append(
                         ['<div class="file-div">',
                             '<img class="layui-upload-img"  src="' + values[i] + '">',
-                            '<input type="hidden" name="' + _name + ' ">',
+                            '<input type="hidden" name="' + _name + '">',
                             '<div class="file-delete" ><span class="delete-list">',
                             '<i class="fa fa-undo"></i>',
                             '<i class="fa fa-repeat"></i>',
@@ -114,7 +114,7 @@
                 '<div class="layui-upload-list">',
                 '<div class="file-div">',
                 '<img class="layui-upload-img" id="' + _uploadId + '_img"  src="/statics/img/noImg.png">',
-                '<input type="hidden" id="' + _uploadId + '_val" name="' + _name + ' ">',
+                '<input type="hidden" id="' + _uploadId + '_val" name="' + _name + '">',
                 '<div class="file-delete" ><span class="delete-one"> ',
                 '<i class="fa fa-undo"></i>',
                 '<i class="fa fa-repeat"></i>',
@@ -123,6 +123,7 @@
                 ' </div>'].join(""));
             if (_value != "") {
                 $("#" + _uploadId + "_img").attr("src", _value);
+                $("#" + _uploadId + "_val").val(_value);
             }
             layui.use('upload', function () {
                 var upload = layui.upload;
@@ -138,7 +139,7 @@
                         if (res.code === 0) {
                             $("#" + _uploadId + "_img").attr("src", res.url);
                             $("#" + _uploadId + "_val").val(res.url);
-                            Msg.success(res.url);
+                            Msg.success("上传成功");
                         } else {
                             Msg.error(res.msg);
                         }
