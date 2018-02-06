@@ -77,7 +77,7 @@
                             $("#" + _uploadId + "_imgs").append(
                                 ['<div class="file-div">',
                                     '<img class="layui-upload-img"   src="' + res.url + '">',
-                                    '<input type="hidden" name="' + _name + ' ">',
+                                    '<input type="hidden" name="' + _name + '">',
                                     '<div class="file-delete" ><span class="delete-list"> ',
                                     '<i class="fa fa-undo"></i>',
                                     '<i class="fa fa-repeat"></i>',

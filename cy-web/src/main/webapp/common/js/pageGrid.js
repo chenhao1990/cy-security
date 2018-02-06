@@ -349,6 +349,7 @@
                     var conditions = data.field;
                     $.extend(defaultParam, conditions);
                     var R = PageGrid.getData(props.url);
+                    defaultParam.init=true;
                     PageGrid.setPage(R, _table, props.url);
                     return false;
                 });
