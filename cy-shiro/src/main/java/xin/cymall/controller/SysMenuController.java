@@ -1,5 +1,7 @@
 package xin.cymall.controller;
 
+import xin.cymall.annotation.RedisCache;
+import xin.cymall.annotation.RedisEvict;
 import xin.cymall.annotation.SysLog;
 import xin.cymall.entity.SysMenu;
 import xin.cymall.enumresource.TopMenuEnum;
@@ -54,6 +56,7 @@ public class SysMenuController extends AbstractController {
     @ResponseBody
     @RequestMapping("/select")
     @RequiresPermissions("sys:menu:select")
+    @RedisCache(type=SysMenu.class)
     public R select() {
         //查询列表数据
         List<SysMenu> menuList = sysMenuService.queryNotButtonList();
@@ -223,6 +226,7 @@ public class SysMenuController extends AbstractController {
     @SysLog("修改菜单")
     @RequestMapping("/update")
     @RequiresPermissions("sys:menu:update")
+    @RedisEvict(type=SysMenu.class)
     public R update(@RequestBody SysMenu menu) {
         //数据校验
         verifyForm(menu);

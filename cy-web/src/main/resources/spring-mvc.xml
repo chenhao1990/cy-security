@@ -76,6 +76,7 @@
         <property name="viewNames" value="*.jsp" />
         <property name="suffix" value=""/>
         <property name="order" value="1"/>
+		<property name="requestContextAttribute" value="rc"/>
     </bean>
     
     <!-- FreeMarker视图解析器 -->
@@ -111,5 +112,5 @@
 	        </bean>
 	    </property>
 	</bean>
-	
+
 </beans>
