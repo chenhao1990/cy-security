@@ -345,7 +345,16 @@
                 R = PageGrid.getData(url);
             }
             defaultParam.init=false;
-            // //渲染表格数据
+            //重置全选按钮
+            var allChoose=$grid.find("[lay-filter='allChoose']");
+            allChoose.each(function (index, item) {
+                item.checked = false;
+            });
+            layui.use('form', function () {
+                var form = layui.form();
+                form.render('checkbox');
+            });
+            //渲染表格数据
             PageGrid.renderData(R, $grid, pageProps);
         },
         /**查询表格 by chenyi 2017/6/23*/
