@@ -8,8 +8,8 @@
 <html>
 <head>
     <title>子订单管理</title>
-    <%@ include file="/common/jsp/resource.jsp" %>
     <script type="text/javascript" src="/frontframe/demo/js/list.js"></script>
+    <%@ include file="/common/jsp/resource.jsp" %>
 </head>
 <body>
 <form class="layui-form" action="">
@@ -85,7 +85,7 @@
 </div>
 <div class="layui-form nowrap">
     <table class="layui-table" id="studentTable" cyType="pageGrid"
-           cyProps="url:'/frontframe/json/student.json',checkbox:'true',pageColor:'#2991d9'
+           cyProps="url:'/frontframe/json/student.json',checkbox:'true'
                     ,beforeRender:'Render.beforeRender',onCheck:'Render.onCheck',afterRender:'Render.afterRender'">
         <thead>
         <tr>
@@ -96,7 +96,7 @@
             <!--isPrimary：是否是主键-->
             <th width="5%" param="{name:'stuId',isPrimary:'true',hide:'true'}">id</th>
 
-            <th width="10%" param="{name:'name'}">姓名</th>
+            <th width="10%" param="{name:'name',sort:'true'}">姓名</th>
 
             <th width="5%" param="{name:'age'}">年龄</th>
 
@@ -110,6 +110,7 @@
 
             <th width="10%" param="{name:'note'}">备注</th>
 
+            <th width="2%" param="{name:'sort',sortBtn:'true'}">排序</th>
 
             <th width="10%" param="{operate:'true',buttons:'Render.state,Render.edit,Render.delete'}">
                 操作

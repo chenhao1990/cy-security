@@ -24,7 +24,7 @@ public class RedisCacheAspect {
 
     private static final Logger logger = Logger.getLogger(RedisCacheAspect.class);
     /**
-     * 分隔符 生成key 格式为 类全类名|方法名|参数所属类全类名
+     * 分隔符 生成key 格式为 类全类名:方法名:参数所属类全类名
      **/
     private static final String DELIMITER = ":";
     /**

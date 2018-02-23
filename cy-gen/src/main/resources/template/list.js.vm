@@ -8,6 +8,23 @@
 /**数据渲染对象*/
 var Render = {
     /**
+     * 上移
+     * @param primary   主键id
+     * @param number    上移条数
+     */
+    moveTop: function (primary,number) {
+        Msg.msg("id:"+primary+" 上移: " + number);
+
+    },
+    /**
+     * 下移
+     * @param primary   主键id
+     * @param number    下移条数
+     */
+    moveBottom: function (primary,number) {
+        Msg.msg("id:"+primary+" 下移: " + number);
+    },
+    /**
      * 渲染状态列
      * @param rowdata    行数据
      * @param renderData 渲染后的列

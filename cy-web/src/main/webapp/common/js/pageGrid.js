@@ -184,7 +184,7 @@
             //获取将要渲染的数据
             var data = R.page ? R.page.list : [];
 
-            var _th_length = _grid.find("thead th:visible ").length || 0;
+            var _th_length = _grid.find("thead th:visible").length || 0;
             if (data.length == 0) {
                 _grid.find("tbody").append('<tr><td style="text-align: center" colspan="' + _th_length + '">暂无数据</td></tr>')
             }
@@ -208,6 +208,7 @@
                     var render = params.render;
                     var enumName = params.enumName;
                     var codeName = params.codeName;
+                    var sortBtn = params.sortBtn||"false";
                     //是否是操作列
                     var operate = params.operate || "false";
                     var hide = params.hide || "false";
@@ -234,6 +235,7 @@
                     } else {
                         for (var key in data[i]) {
                             if (key == _name) {
+
                                 //如果是枚举
                                 if (enumName != null && enumName != undefined && enumName != "") {
                                     var enumValues = PageGrid.getDataByEnum(enumName).data || "";
@@ -259,6 +261,8 @@
                                     var func = eval((render));
                                     data[i][key] = func(rowdata,data[i], i, data[i][key]);
                                 }
+
+
                                 var value = data[i][key] || "";
                                 //如果是主键并且主键不为空，设置主键值
                                 if (isPrimary == "true") {
@@ -269,11 +273,25 @@
                                     var attrObj = {attrName: attrName, attrValue: value};
                                     attr.push(attrObj);
                                 }
-                                if (hide == "true") {
-                                    $(_tr).append('<td style="display: none" name=' + _name + '>' + value + '</td>');
-                                } else {
-                                    $(_tr).append('<td name=' + _name + '>' + value + '</td>');
+
+                                //如果是排序操作列
+                                if(sortBtn == "true"){
+                                    $(_tr).append('<td class="sort-btn">' +
+                                        '<i class="fa fa-angle-double-up" onclick="Render.moveTop('+primary+','+defaultParam.limit+')"/>' +
+                                        '<i class="fa fa-angle-double-down" onclick="Render.moveBottom('+primary+','+defaultParam.limit+')"/>' +
+                                        '<i class="fa fa-angle-up" onclick="Render.moveTop('+primary+',1)"/>' +
+                                        '<i class="fa fa-angle-down" onclick="Render.moveBottom('+primary+',1)"/></td>');
+                                }else{
+                                    //如果是隐藏列
+                                    if (hide == "true") {
+                                        $(_tr).append('<td style="display: none" name=' + _name + '>' + value + '</td>');
+                                    } else {
+                                        $(_tr).append('<td name=' + _name + '>' + value + '</td>');
+                                    }
+
+
                                 }
+
                             }
                         }
 
@@ -301,6 +319,7 @@
 
                 }
                 PageGrid.renderCheckbox();
+
             }
 
 

@@ -262,3 +262,37 @@ blockquote .file-div{
 ul.dropdown-menu li{
     margin: 5px!important;
 }
+
+
+/*排序列*/
+.sort-btn .fa{
+    color: #59acff;
+    font-weight: bold;
+}
+
+.sort-btn .fa:hover{
+    cursor: pointer;
+}
+
+.fa-angle-double-up{
+    position: absolute;
+    top:5px;
+    left:15px;
+}
+.fa-angle-double-down{
+    position: absolute;
+    top:20px;
+    left:15px;
+}
+
+.fa-angle-up{
+    position: absolute;
+    top:5px;
+    left:30px;
+}
+
+.fa-angle-down{
+    position: absolute;
+    top:20px;
+    left:30px;
+}

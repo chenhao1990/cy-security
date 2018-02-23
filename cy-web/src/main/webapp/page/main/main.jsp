@@ -21,6 +21,7 @@
  1.项目主页 <a class="a-link" target="_blank" href="http://admin.cymall.xin">http://admin.cymall.xin</a><br>
  2.码云地址 <a class="a-link" target="_blank" href="https://gitee.com/leiyuxi/cy-security">https://gitee.com/leiyuxi/cy-security</a><br>
  3.qq群 275846351<br>
+ 4.个人开源项目 <a class="a-link" target="_blank" href="https://gitee.com/leiyuxi/">https://gitee.com/leiyuxi/</a><br>
 </blockquote>
 
 <fieldset class="layui-elem-field layui-field-title" style="margin-top: 30px;">
@@ -31,10 +32,9 @@
   <i class="ft-green layui-icon layui-timeline-axis layui-anim layui-anim-rotate layui-anim-loop">&#x1002;</i>
   <div class="layui-timeline-content layui-text">
    <h3 class="layui-timeline-title"></h3>
-   <p class="ft-green">熬夜更新中...</p>
+   <p class="ft-green">熬夜优化更新中...</p>
    <ul>
-    <li>html版</li>
-    <li>cy-api前后端分离版</li>
+    <li>加q群275846351...</li>
    </ul>
   </div>
  </li>
@@ -42,7 +42,43 @@
  <li class="layui-timeline-item">
   <i class="layui-icon layui-timeline-axis">&#xe63f;</i>
   <div class="layui-timeline-content layui-text">
-   <h3 class="layui-timeline-title">2018-01-24</h3>
+   <h3 class="layui-timeline-title">2017-02-23</h3>
+   <p class="a-link">优化</p>
+   <ul>
+    <li>前端框架字体图标</li>
+    <li>分页表格添加排序操作列功能</li>
+   </ul>
+  </div>
+ </li>
+
+ <li class="layui-timeline-item">
+  <i class="layui-icon layui-timeline-axis">&#xe63f;</i>
+  <div class="layui-timeline-content layui-text">
+   <h3 class="layui-timeline-title">2017-02-23</h3>
+   <p class="a-link">cy-api</p>
+   <ul>
+    <li>springboot版接口开发框架cy-api</li>
+    <li>详情请查看个人开源项目<a class="a-link" target="_blank" href="https://gitee.com/leiyuxi/">https://gitee.com/leiyuxi/</a></li>
+   </ul>
+  </div>
+ </li>
+
+ <li class="layui-timeline-item">
+  <i class="layui-icon layui-timeline-axis">&#xe63f;</i>
+  <div class="layui-timeline-content layui-text">
+   <h3 class="layui-timeline-title">2017-02-23</h3>
+   <p class="a-link">cy-ui</p>
+   <ul>
+    <li>html前端框架cy-ui</li>
+    <li>详情请查看个人开源项目<a class="a-link" target="_blank" href="https://gitee.com/leiyuxi/">https://gitee.com/leiyuxi/</a></li>
+   </ul>
+  </div>
+ </li>
+
+ <li class="layui-timeline-item">
+  <i class="layui-icon layui-timeline-axis">&#xe63f;</i>
+  <div class="layui-timeline-content layui-text">
+   <h3 class="layui-timeline-title">2017-01-24</h3>
    <p class="a-link">优化</p>
    <ul>
     <li>优化列表页全选联动|列表页添加表格渲染前方法、表格渲染后方法、复选框点击方法 -》pageGrid.js </li>

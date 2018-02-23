@@ -158,5 +158,26 @@ public class CommparaController {
 		
 		return R.ok();
 	}
-	
+
+    /**
+     * 上移
+     */
+    @ResponseBody
+    @SysLog("上移")
+    @RequestMapping("/moveTop/{id}/{number}")
+    public R moveTop(@PathVariable String id,@PathVariable String number){
+
+        return R.ok();
+    }
+
+    /**
+     * 下移
+     */
+    @ResponseBody
+    @SysLog("下移")
+    @RequestMapping("/moveBottom/{id}/{number}")
+    public R moveBottom(@PathVariable String id,@PathVariable String number){
+
+        return R.ok();
+    }
 }

@@ -56,7 +56,6 @@ public class SysMenuController extends AbstractController {
     @ResponseBody
     @RequestMapping("/select")
     @RequiresPermissions("sys:menu:select")
-    @RedisCache(type=SysMenu.class)
     public R select() {
         //查询列表数据
         List<SysMenu> menuList = sysMenuService.queryNotButtonList();

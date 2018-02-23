@@ -9,8 +9,8 @@
 <html>
 <head>
     <title>表格控件</title>
-    <%@ include file="/common/jsp/resource.jsp" %>
     <script type="text/javascript" src="/frontframe/widget/js/list.js"></script>
+    <%@ include file="/common/jsp/resource.jsp" %>
 </head>
 <body>
 <div class="layui-input-inline">
@@ -46,9 +46,11 @@
 
                             <th width="10%" param="{name:'paraKey'}">参数值</th>
 
-                            <th width="10%" param="{name:'sortNo'}">排序</th>
+                            <th width="2%" param="{name:'sortNo'}">排序</th>
                              <!--render：渲染列-->
                             <th width="10%" param="{name:'state',codeName:'state',render:'Render.customState'}">状态</th>
+                             <!--sortBtn：排序操作列-->
+                            <th width="4%" param="{name:'sortNo',sortBtn:'true'}">排序操作</th>
                              <!--buttons：操作列-->
                             <th width="10%" param="{operate:'true',buttons:'Render.state,Render.edit,Render.delete'}">操作</th>
                        </tr>
@@ -97,9 +99,11 @@
 
                             <th width="10%" param="{name:'paraKey'}">参数值</th>
 
-                            <th width="10%" param="{name:'sortNo'}">排序</th>
+                            <th width="2%" param="{name:'sortNo'}">排序</th>
                             <!--render：渲染列-->
                             <th width="10%" param="{name:'state',codeName:'state',render:'Render.customState'}">状态</th>
+                            <!--sortBtn：排序操作列-->
+                            <th width="4%" param="{name:'sortNo',sortBtn:'true'}">排序操作</th>
                             <!--buttons：操作列-->
                             <th width="10%" param="{operate:'true',buttons:'Render.state,Render.edit,Render.delete'}">操作</th>
                         </tr>
@@ -225,6 +229,12 @@
                     <td>渲染列,进入js方法,自定义返回该列的数据与格式</td>
                     <td>null</td>
                     <td>param="{render:'Render.customState'}"</td>
+                </tr>
+                <tr>
+                    <td>param.sortBtn</td>
+                    <td>排序操作列</td>
+                    <td>false</td>
+                    <td>param="{sortBtn:'true'}"</td>
                 </tr>
                 </tbody>
             </table>
