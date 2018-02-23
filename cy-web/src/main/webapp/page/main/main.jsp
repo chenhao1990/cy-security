@@ -32,7 +32,7 @@
   <i class="ft-green layui-icon layui-timeline-axis layui-anim layui-anim-rotate layui-anim-loop">&#x1002;</i>
   <div class="layui-timeline-content layui-text">
    <h3 class="layui-timeline-title"></h3>
-   <p class="ft-green">熬夜优化更新中...</p>
+   <p class="ft-green">cy商城熬夜瞎搞中...</p>
    <ul>
     <li>加q群275846351...</li>
    </ul>
