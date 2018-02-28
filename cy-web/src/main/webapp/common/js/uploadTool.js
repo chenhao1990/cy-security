@@ -100,7 +100,7 @@
         },
         /**渲染上传控件(上传单个文件) by chenyi 2017/8/22*/
         renderSingle: function ($grid, cyProps) {
-            var _url = cyProps.url || "/getData/uploadFile/";
+            var _url = cyProps.url || "/getData/upload/";
             var _uploadId = $t.getUUID(32, 16);
             var _btnName = cyProps.btnName || "上传图片";
             var _name = cyProps.name || "";
