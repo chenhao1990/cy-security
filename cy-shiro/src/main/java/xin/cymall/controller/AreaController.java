@@ -76,6 +76,18 @@ public class AreaController {
     }
 
 
+
+    @ResponseBody
+    @RequestMapping("findByParentId")
+    public R findByParentId(@RequestParam Map<String, Object> params) {
+       String parentId= (String)params.get("parentId");
+       if (StringUtil.isEmpty(parentId)){
+           parentId="0000000000";
+       }
+        List<Area> areaList =areaService.findByParentId(parentId);
+        return R.ok().put("data", areaList);
+    }
+
     /**
      * 跳转到新增页面
      **/

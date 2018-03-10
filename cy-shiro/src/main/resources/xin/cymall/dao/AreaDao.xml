@@ -26,7 +26,7 @@
 	</select>
 
 	<select id="findByParentId" resultType="xin.cymall.entity.Area">
-		select * from t_area where parent_area_id = #{value}
+		select area_id,area_name,parent_area_id from t_area where parent_area_id = #{value} and state='1'
 	</select>
 
 	<select id="getAreaListByIsShow" resultType="xin.cymall.entity.Area">

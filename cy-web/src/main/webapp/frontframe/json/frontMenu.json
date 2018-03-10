@@ -229,6 +229,14 @@
               "children": null,
               "icon": "",
               "list": null,
+              "name": "级联插件",
+              "type": 1,
+              "url": "frontframe/widget/cascadeTool.jsp"
+            },
+            {
+              "children": null,
+              "icon": "",
+              "list": null,
               "name": "联动选择框",
               "type": 1,
               "url": "frontframe/widget/linkSelectTool.jsp"

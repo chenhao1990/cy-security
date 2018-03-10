@@ -73,7 +73,7 @@
               
 
                     <!--通过枚举渲染数据-->
-                    <div cyType="selectTool" cyProps="enumName:'SexEnum',search:'true',filter:'demo'"
+                    <div cyType="cascadeTool" cyProps="enumName:'SexEnum',search:'true',filter:'demo'"
                          name="sex" value="0" class="layui-input-inline"></div>  <br><br>
 
                     <!--通过字典渲染数据-->

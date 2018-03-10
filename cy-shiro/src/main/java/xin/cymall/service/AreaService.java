@@ -36,4 +36,6 @@ public interface AreaService {
 	void updateState(String[] ids, String stateValue);
 
 	String getAreaNameStr(String area_id_str);
+
+    List<Area> findByParentId(String parentAreaId);
 }

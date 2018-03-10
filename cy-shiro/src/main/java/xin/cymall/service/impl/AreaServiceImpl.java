@@ -140,7 +140,8 @@ public class AreaServiceImpl implements AreaService {
 		}
 	}
 
-	private List<Area> findByParentId(String pId) {
+	@Override
+	public List<Area> findByParentId(String pId) {
 		return areaDao.findByParentId(pId);
 	}
 

@@ -180,9 +180,10 @@
      */
     window.Loading.msg = function (msg) {
         var index;
-       index=parent.layer.msg(msg, {
+        index=parent.layer.msg(msg, {
             icon: 16
             ,shade: 0.01
+           ,time: 1000000
         });
        return index;
     };
