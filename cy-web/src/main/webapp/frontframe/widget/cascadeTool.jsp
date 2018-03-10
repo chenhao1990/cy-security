@@ -12,9 +12,7 @@
     <%@ include file="/common/jsp/resource.jsp" %>
 </head>
 <body>
-<div class="layui-input-inline">
-    <button class="layui-btn" onclick="submitCode()">提交代码</button>
-</div>
+
 <div class="layui-tab">
     <ul class="layui-tab-title">
         <li class="layui-this">代码</li>
@@ -242,24 +240,10 @@
         </div>
     </div>
 </div>
-</div>
+
 <script>
     layui.use('element', function () {
     });
-    function submitCode() {
-        var code = $("textarea").val();
-        $("#result").html(code);
-        var select = $("#result").find("[cyType='selectTool']");
-        for (var i = 0; i < select.length; i++) {
-            $(select[i]).selectTool();
-        }
-        layui.use('form', function () {
-            var form = layui.form();
-            form.render();
-        });
-        Msg.success("代码提交成功,请查看效果!");
-        Tips.info("点此查看效果", $("#showResult"));
-    }
 
     layui.use('code', function () { //加载code模块
         layui.code({encode: true}); //引用code方法
