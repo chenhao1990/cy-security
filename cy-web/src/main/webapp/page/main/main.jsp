@@ -42,6 +42,19 @@
  <li class="layui-timeline-item">
   <i class="layui-icon layui-timeline-axis">&#xe63f;</i>
   <div class="layui-timeline-content layui-text">
+   <h3 class="layui-timeline-title">2018-03-10</h3>
+   <p class="a-link">添加级联插件</p>
+   <ul>
+    <li>扒了一份很满意的级联插件</li>
+    <li>美滋滋</li>
+   </ul>
+  </div>
+ </li>
+
+
+ <li class="layui-timeline-item">
+  <i class="layui-icon layui-timeline-axis">&#xe63f;</i>
+  <div class="layui-timeline-content layui-text">
    <h3 class="layui-timeline-title">2017-02-23</h3>
    <p class="a-link">优化</p>
    <ul>
