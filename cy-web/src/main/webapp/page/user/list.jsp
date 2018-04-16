@@ -31,6 +31,7 @@
     </div>
 </form>
 <div class="layui-btn-group">
+         <button class="layui-btn" onclick="$t.addTab('/page/user/add.jsp','添加用户')"><i class="fa fa-plus">&nbsp;</i>添加tab页测试</button>
         <button class="layui-btn" onclick="add('/sys/user/add')"><i class="fa fa-plus">&nbsp;</i>增加</button>
         <button class="layui-btn" onclick="edit('userTable','/sys/user/edit')" style="margin-left: 5px!important;">
              <i class="fa fa-pencil-square-o">&nbsp;</i>修改

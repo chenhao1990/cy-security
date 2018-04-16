@@ -11,6 +11,66 @@
     //前台工具类对象
     window.$t = window.$t || {};
 
+
+
+    /**
+     * 添加tabs页
+     * @Date: 2018/04/16
+     */
+    window.$t.addTab=function (url,name) {
+        //判断该页面是否已存在
+        if (  $(parent.document).find("#navTab").find("li[data-url='" + url + "']").length === 0) {
+            var index = Loading.open(1,false);
+            //如果不存在
+            $(parent.document).find("#navTab").find("li").removeClass("selected");
+            //新增tab页
+            var _li = ['<li tabid="tools-utils" class="selected" data-url="' + url + '">',
+                '<a href="javascript:" title="' + name + '" class="tools-utils">',
+                '<span>' + name + '</span>',
+                '</a>',
+                '<a href="javascript:;" class="close">close</a>',
+                '</li>'].join("");
+            $(parent.document).find("#navTab").find("ul").append(_li);
+            //新增右侧更多list
+            $(parent.document).find(".tabsMoreList").find("li").removeClass("selected");
+            var moreli = '<li class="selected" data-url="'+url+'"><a href="javascript:"  title="' + name + '">' + name + '</a></li>';
+            $(parent.document).find(".tabsMoreList").append(moreli);
+
+            $(parent.document).find(".content").find("iframe").removeClass("cy-show");
+            //打开iframe
+            var iframe = $('<iframe class="cy-show" scrolling="yes" frameborder="0" style="width: 100%; height: 100%; overflow: visible; "></iframe>');
+            $(iframe).attr("src", url);
+            $(parent.document).find(".content").append(iframe);
+            $(iframe).load(function() {
+                Loading.close(index);
+            });
+
+            //tab过多时
+            var _lis = $(parent.document).find(".tabsPageHeaderContent").find("li");
+            var n = 0;
+            for (var i = 0; i < _lis.length; i++) {
+                n += $(_lis[i]).width();
+            }
+
+            //获取右侧区域宽度
+            var _width = $(parent.document).find("#navTab").width();
+            if (n > parseInt(_width)-150 ) {
+                $(parent.document).find(".tabsRight,.tabsLeft").show();
+            }
+
+
+        }else{
+            $(parent.document).find("#navTab").find("li").removeClass("selected");
+            $(parent.document).find("#navTab").find("li[data-url='" + url + "']").addClass("selected");
+            $(parent.document).find(".content").find("iframe").removeClass("cy-show");
+            $(parent.document).find(".content").find("iframe[src='"+url+"']").addClass("cy-show");
+            //更多列表
+            $(parent.document).find(".tabsMoreList").find("li").removeClass("selected");
+            $(parent.document).find(".tabsMoreList").find("li[data-url='"+url+"']").addClass("selected");
+        }
+
+    };
+
     /**
      * 关闭窗口
      * @Date: 2017/12/8
