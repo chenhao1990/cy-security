@@ -2,6 +2,8 @@
 
  **官网**   **http://www.cymall.xin/** 
 
+ **cy-im**   **http://im.cymall.xin/** 
+
  **springboot版开发框架  cy-fast  [https://gitee.com/leiyuxi/cy-fast](https://gitee.com/leiyuxi/cy-fast)** 
 
  **html纯前端框架  cy-fast  [http://www.cymall.xin:8084](http://www.cymall.xin:8084)** 
