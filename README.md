@@ -2,7 +2,7 @@
 
  **官网**   **http://www.cymall.xin/** 
 
- **cy-im**   **http://im.cymall.xin/** 
+ **cy-im在线聊天**   **http://im.cymall.xin/** 
 
  **springboot版开发框架  cy-fast  [https://gitee.com/leiyuxi/cy-fast](https://gitee.com/leiyuxi/cy-fast)** 
 
